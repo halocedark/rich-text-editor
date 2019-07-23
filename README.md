@@ -18,9 +18,9 @@ Rich Text Editor is a free, open source WYSIWYG editor built for the modern web.
 ## Navigation:
 1. [Requirements](#Requirements).
 2. [Installation](#Installation).
-3. [How to use](#How to use).
-4. [Submit to php file](#Submit to php file).
-5. [Submit to php file using Ajax](#Submit to php file using Ajax).
+3. [How to use](#How-to-use).
+4. [Submit to php file](#Submit-to-php-file).
+5. [Submit to php file using Ajax](#Submit-to-php-file-using-Ajax).
 
 ### Requirements:
 This "Rich Text Editor" uses the following:
