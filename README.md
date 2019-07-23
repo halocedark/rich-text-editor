@@ -44,74 +44,62 @@ Before the ```</body>``` tag add:
 How to use:
 
 In your javascript file inside ```$( document ).ready(function() {});``` jquery function:
-1. Create new instance of ```RichTextEditor()``` class and pass parent element for the editor like this: 
-  ```
-	var richTextEditor = new RichTextEditor( $('.wysiwyg-wrapper') );
-	{ $('.wysiwyg-wrapper') } // this is a div element created in the DOM where we're going to put the editor
-  ```
+1. Create new instance of ```RichTextEditor()``` class and pass parent element for the editor like this:
+```
+   
+var richTextEditor = new RichTextEditor( $('.wysiwyg-wrapper') );
+   
+$('.wysiwyg-wrapper') // this is a div element created in the DOM where we're going to put the editor
+  
+```
 2. You're done.
 
 Submit to php file:
 
 This is how to submit editor info to for EX: ```new-post.php``` file:
 1. After you created new instance of editor class, you'll have access to manipulate editor's default behaviour for EX: form "action" attribute, let's set it to our file above so that our editor will send info to allow us to process those info in that file, we'll do that with simple steps:
-  ```
-  richTextEditor.setAction('new-post.php'); // This will set editor form "action" attribute to 'new-post.php'
-  ```
+```
+richTextEditor.setAction('new-post.php'); // This will set editor form "action" attribute to 'new-post.php'
+```
 2. That's it, now go to your browser and "inspect elements", notice that form "action" is set to our file.
 3. Now you can see elements name attribute to handle them in that php file we've set, easy squeezy :).
 4. You're done.
 
 With ajax:
 
-1. Make sure you're submitting to the right file: ```richTextEditor.setAction('new-post.php');```
+1. Make sure you're submitting to the right file: 
+```
+richTextEditor.setAction('new-post.php');
+```
 2. Select Editor submit button or form using JQuery:
-  ```
-  $('.rich-text-editor #editorForm').on('submit', function(e)
-  {
-    e.preventDefault(); // To prevent form from redirecting to out file we set above 'new-post.php'
-    
-  });
-  ```
+```
+$('.rich-text-editor #editorForm').on('submit', function(e)
+{
+  e.preventDefault(); // To prevent form from redirecting to out file we set above 'new-post.php'
+});
+```
 3. Call submit method with callback function to get response back:
 	
-  ```
-  $('.rich-text-editor #editorForm').on('submit', function(e)
+```
+$('.rich-text-editor #editorForm').on('submit', function(e)
+{
+  e.preventDefault(); // To prevent form from redirecting to out file we set above 'new-post.php'
+  richTextEditor.submit(function(data)
   {
-    e.preventDefault(); // To prevent form from redirecting to out file we set above 'new-post.php'
-    richTextEditor.submit(function(data)
-    {
-      console.log(data); // data is returned as JSON so make sure you encode it in php using "json_encode()" function before calling this method
-     
-    });
+    console.log(data); // data is returned as JSON so make sure you encode it in php using "json_encode()" function before calling this     method
   });
-    ```
+});
+```
 4. After sending data to our PHP file 'new-post.php', now we need to decode it in our php file, because we actually sent a JSON Object as string using "json.stringify" JavaScript method.
-    ```
-    $data = json_decode($_POST['data'], true);  // Decode JSON Data
-    if ( isset($data) ) 
-    {
-      $title = $data['title'];
-      $body  = $data['content'];
-      $message = '';
-      $error   = '';
-      $posts = new Post();
-
-      if ( $posts->insertNewPost($title, $body) )
-        $message = 'Post successfully created!';
-      else
-      {
-        $error = 'Could not create new post!';
-      }
-
-      $output = array(
-        'message' => $message,
-        'error'   => $error
-      );
-
-      echo json_encode($output);
-    }
-    ```
+    
+```
+$data = json_decode($_POST['data'], true);  // Decode JSON Data
+if ( isset($data) ) 
+{
+  echo json_encode($data); // Just to see how the data is looking like, send it back to out JavaScript to console.log(data) from last step
+}
+```
+    
 5. Notice that our variable we send using richTextEditor.submit() method is called "data", so that to keep in mind!
 6. You're done.
 
