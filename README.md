@@ -15,7 +15,7 @@ Rich Text Editor is a free, open source WYSIWYG editor built for the modern web.
 
 =========================
 ## Template:
-1. [Requirements](Requirements).
+1. [here](Requirements).
 ### Requirements:
 This "Rich Text Editor" uses the following:
 
