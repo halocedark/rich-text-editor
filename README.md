@@ -14,8 +14,14 @@ Rich Text Editor is a free, open source WYSIWYG editor built for the modern web.
 * Email: not provided for security
 
 =========================
-## Template:
-1. [here](Requirements).
+
+## Navigation:
+1. [Requirements](#Requirements).
+2. [Installation](#Installation).
+3. [How to use](#How to use).
+4. [Submit to php file](#Submit to php file).
+5. [Submit to php file using Ajax](#Submit to php file using Ajax).
+
 ### Requirements:
 This "Rich Text Editor" uses the following:
 
@@ -67,7 +73,7 @@ richTextEditor.setAction('new-post.php'); // This will set editor form "action" 
 3. Now you can see elements name attribute to handle them in that php file we've set, easy squeezy :).
 4. You're done.
 
-### Submit to php file With ajax:
+### Submit to php file using Ajax:
 
 1. Make sure you're submitting to the right file: 
 ```
