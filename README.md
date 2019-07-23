@@ -15,6 +15,7 @@ Rich Text Editor is a free, open source WYSIWYG editor built for the modern web.
 
 =========================
 
+### Requirements:
 This "Rich Text Editor" uses the following:
 
 - bootstrap (css, js).
@@ -24,7 +25,7 @@ This "Rich Text Editor" uses the following:
 All those files above are available with the editor, so you just need to include them.
 
 Note: include order is required to avoid "File not found errors" or such.
-
+### Installation:
 Your includes should be like this:
 
 Before the ```</head>``` tag add:
@@ -41,7 +42,7 @@ Before the ```</body>``` tag add:
   <script type="text/javascript" src="js/wysiwyg.min.js"></script>
   <script type="text/javascript" src="js/your-script.js"></script>
   ```
-How to use:
+### How to use:
 
 In your javascript file inside ```$( document ).ready(function() {});``` jquery function:
 1. Create new instance of ```RichTextEditor()``` class and pass parent element for the editor like this:
@@ -54,7 +55,7 @@ $('.wysiwyg-wrapper') // this is a div element created in the DOM where we're go
 ```
 2. You're done.
 
-Submit to php file:
+### Submit to php file:
 
 This is how to submit editor info to for EX: ```new-post.php``` file:
 1. After you created new instance of editor class, you'll have access to manipulate editor's default behaviour for EX: form "action" attribute, let's set it to our file above so that our editor will send info to allow us to process those info in that file, we'll do that with simple steps:
@@ -65,7 +66,7 @@ richTextEditor.setAction('new-post.php'); // This will set editor form "action" 
 3. Now you can see elements name attribute to handle them in that php file we've set, easy squeezy :).
 4. You're done.
 
-With ajax:
+### Submit to php file With ajax:
 
 1. Make sure you're submitting to the right file: 
 ```
