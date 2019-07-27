@@ -41,6 +41,7 @@ Before the ```</head>``` tag add:
   <link rel="stylesheet" type="text/css" href="css/all.min.css">
   <link rel="stylesheet" type="text/css" href="css/wysiwyg.min.css">
   <link rel="stylesheet" type="text/css" href="css/your-style.css">
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   ```
 Before the ```</body>``` tag add:
   ```
