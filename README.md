@@ -71,7 +71,7 @@ This is how to submit editor info to for EX: ```new-post.php``` file:
 richTextEditor.setAction('new-post.php'); // This will set editor form "action" attribute to 'new-post.php'
 ```
 2. That's it, now go to your browser and "inspect elements", notice that form "action" is set to our file.
-3. Now you can see elements name attribute to handle them in that php file we've set, easy squeezy :).
+3. Now when you inspected page elements you can see editor form elements **name** attribute to handle them in that php file we've set, easy squeezy :).
 4. You're done.
 
 ### Submit to php file using Ajax:
@@ -84,7 +84,7 @@ richTextEditor.setAction('new-post.php');
 ```
 $('.rich-text-editor #editorForm').on('submit', function(e)
 {
-  e.preventDefault(); // To prevent form from redirecting to out file we set above 'new-post.php'
+  e.preventDefault(); // To prevent editor form from redirecting you to our file we set above 'new-post.php'
 });
 ```
 3. Call submit method with callback function to get response back:
