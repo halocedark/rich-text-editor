@@ -50,6 +50,19 @@ Before the ```</body>``` tag add:
   <script type="text/javascript" src="js/wysiwyg.min.js"></script>
   <script type="text/javascript" src="js/your-script.js"></script>
   ```
+  **Or You Can Do This Alternatively**
+  
+Before the ```</head>``` tag add:
+  ```
+  <link rel="stylesheet" type="text/css" href="css/wysiwyg.all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/your-style.css">
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  ```
+Before the ```</body>``` tag add:
+  ```
+  <script type="text/javascript" src="js/wysiwyg.all.min.js"></script>
+  <script type="text/javascript" src="js/your-script.js"></script>
+  ```
 ### How to use:
 
 In your javascript file inside ```$( document ).ready(function() {});``` jquery function:
