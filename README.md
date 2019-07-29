@@ -50,7 +50,7 @@ Before the ```</body>``` tag add:
   <script type="text/javascript" src="js/wysiwyg.min.js"></script>
   <script type="text/javascript" src="js/your-script.js"></script>
   ```
-  **Or You Can Do This Alternatively**
+**Or You Can Do This Alternatively**
   
 Before the ```</head>``` tag add:
   ```
